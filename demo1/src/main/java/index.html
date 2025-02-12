@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пациенты</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Список пациентов</h1>
+
+<!-- Фильтр -->
+<h2>Фильтр</h2>
+<input type="text" id="filter-name" placeholder="Имя" oninput="filterPatients()">
+<input type="number" id="filter-age" placeholder="Возраст" oninput="filterPatients()">
+<select id="filter-gender" onchange="filterPatients()">
+    <option value="">Все</option>
+    <option value="Мужской">Мужской</option>
+    <option value="Женский">Женский</option>
+</select>
+
+<ul id="patient-list"></ul>
+
+<h2>Добавить пациента</h2>
+<form onsubmit="addPatient(event)">
+    <input type="text" id="name" placeholder="Имя" required>
+    <input type="number" id="age" placeholder="Возраст" required>
+    <select id="gender">
+        <option value="Мужской">Мужской</option>
+        <option value="Женский">Женский</option>
+    </select>
+    <input type="text" id="contactInfo" placeholder="Контактная информация">
+    <button type="submit">Добавить</button>
+</form>
+
+<script src="script.js"></script>
+</body>
+</html>
